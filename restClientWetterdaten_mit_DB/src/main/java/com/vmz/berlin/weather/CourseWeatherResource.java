@@ -86,7 +86,6 @@ public class CourseWeatherResource {
     public void getAndSaveLocation() {
 		locations = (ArrayList<Location>) manager.createQuery("Select b FROM Location b", Location.class).getResultList(); 
 		location = locations.get(0);
-		//LOG.info("Location: " + location.getPlace());
 		
 		switch (location.getPlace()) {
 		case "Berlin":
@@ -166,19 +165,19 @@ public class CourseWeatherResource {
 		// Speichert Tag 1 (heute)
 		converterHandingover = ConverterForCurrentAndForecasts.convert(cWy, "day2");
 		manager.persist(converterHandingover.getdWReworked2()); 
-		// Speichert Tag 1 (heute)
+		// Speichert Tag 2 (morgen)
 		converterHandingover = ConverterForCurrentAndForecasts.convert(cWy, "day3");
 		manager.persist(converterHandingover.getdWReworked3()); 
-		// Speichert Tag 1 (heute)
+		// Speichert Tag 3 (übermorgen)
 		converterHandingover = ConverterForCurrentAndForecasts.convert(cWy, "day4");
 		manager.persist(converterHandingover.getdWReworked4()); 
-		// Speichert Tag 1 (heute)
+		// Speichert Tag 4 (...)
 		converterHandingover = ConverterForCurrentAndForecasts.convert(cWy, "day5");
 		manager.persist(converterHandingover.getdWReworked5()); 
-		// Speichert Tag 1 (heute)
+		// Speichert Tag 5 (...)
 		converterHandingover = ConverterForCurrentAndForecasts.convert(cWy, "day6");
 		manager.persist(converterHandingover.getdWReworked6()); 
-		// Speichert Tag 1 (heute)
+		// Speichert Tag 6 (...)
 		converterHandingover = ConverterForCurrentAndForecasts.convert(cWy, "day7");
 		manager.persist(converterHandingover.getdWReworked7()); 
 		// Speichert Wetter der nächsten Stunde (1. Stunde) (Wird zwar nicht genutzt auf der Webseite, dient aber der Erweiterung)
