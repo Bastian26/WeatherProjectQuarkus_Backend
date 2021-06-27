@@ -1,0 +1,177 @@
+package com.vmz.berlin.weather.data;
+
+import javax.json.bind.annotation.JsonbProperty;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+import javax.persistence.Transient;
+
+/**
+ * Unterklasse von CurrentWeather mit den meisten Daten (Attributen)
+ * @author basti
+ *
+ */
+public class CurrentObject {
+	
+	// Attributes
+	//private int dt;
+	private int sunrise;
+	private int sunset;
+	private double temp;
+	@JsonbProperty("feels_like")
+	private double feelsLike;
+	private int pressure;
+	private int humidity;
+	@JsonbProperty("dew_point")
+	private double dewPoint;
+	private double uvi;
+	private int clouds;
+	private int visibility;
+	@JsonbProperty("wind_speed")
+	private double windSpeed;
+	@JsonbProperty("wind_deg")
+	private int windDeg;
+	private CurrentWeatherObject[] weather;
+	
+	// Default Constructor
+	public CurrentObject() {
+		
+	}
+	
+	// Constructor
+	public CurrentObject(/*int dt,*/ int sunrise, int sunset, double temp, double feelsLike, int pressure, int humidity,
+			double dewPoint, double uvi, int clouds, int visibility, double windSpeed, int windDeg,
+			CurrentWeatherObject[] weather) {
+		super();
+		//this.dt = dt;
+		this.sunrise = sunrise;
+		this.sunset = sunset;
+		this.temp = temp;
+		this.feelsLike = feelsLike;
+		this.pressure = pressure;
+		this.humidity = humidity;
+		this.dewPoint = dewPoint;
+		this.uvi = uvi;
+		this.clouds = clouds;
+		this.visibility = visibility;
+		this.windSpeed = windSpeed;
+		this.windDeg = windDeg;
+//		this.weather = weather;
+	}
+
+	// ###   Getter & Setter   ###
+//	public int getDt() {
+//		return dt;
+//	}
+//
+//	public void setDt(int dt) {
+//		this.dt = dt;
+//	}
+
+	public int getSunrise() {
+		return sunrise;
+	}
+
+	public void setSunrise(int sunrise) {
+		this.sunrise = sunrise;
+	}
+
+	public int getSunset() {
+		return sunset;
+	}
+
+	public void setSunset(int sunset) {
+		this.sunset = sunset;
+	}
+
+	public double getTemp() {
+		return temp;
+	}
+
+	public void setTemp(double temp) {
+		this.temp = temp;
+	}
+
+	public double getFeelsLike() {
+		return feelsLike;
+	}
+
+	public void setFeelsLike(double feelsLike) {
+		this.feelsLike = feelsLike;
+	}
+
+	public int getPressure() {
+		return pressure;
+	}
+
+	public void setPressure(int pressure) {
+		this.pressure = pressure;
+	}
+
+	public int getHumidity() {
+		return humidity;
+	}
+
+	public void setHumidity(int humidity) {
+		this.humidity = humidity;
+	}
+
+	public double getDewPoint() {
+		return dewPoint;
+	}
+
+	public void setDewPoint(double dewPoint) {
+		this.dewPoint = dewPoint;
+	}
+
+	public double getUvi() {
+		return uvi;
+	}
+
+	public void setUvi(double uvi) {
+		this.uvi = uvi;
+	}
+
+	public int getClouds() {
+		return clouds;
+	}
+
+	public void setClouds(int clouds) {
+		this.clouds = clouds;
+	}
+
+	public int getVisibility() {
+		return visibility;
+	}
+
+	public void setVisibility(int visibility) {
+		this.visibility = visibility;
+	}
+
+	public double getWindSpeed() {
+		return windSpeed;
+	}
+
+	public void setWindSpeed(double windSpeed) {
+		this.windSpeed = windSpeed;
+	}
+
+	public int getWindDeg() {
+		return windDeg;
+	}
+
+	public void setWindDeg(int windDeg) {
+		this.windDeg = windDeg;
+	}
+
+	public CurrentWeatherObject[] getWeather() {
+		return weather;
+	}
+
+	public void setWeather(CurrentWeatherObject[] weather) {
+		this.weather = weather;
+	}
+
+
+	
+	
+}
