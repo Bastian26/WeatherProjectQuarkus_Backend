@@ -24,26 +24,26 @@ import com.vmz.berlin.weather.data.reworked.TempObject_NestedInDailyReworked;
 import com.vmz.berlin.weather.data.reworked.WeatherObject_NestedInDailyReworked;
 
 /**
- * Klasse für die der Hauptkonvertierung dient, wandelt externe CurrentWeather-Formate in interne Formate um, welche in einem Containerobjekt gespeichert
- * gespeichert und zurückgegeben werden, aus diesem kann man sich dann die gewünschten Obj. holen
- * @author basti
+ * The class, which is used for the main conversion, converts external CurrentWeather formats into internal formats, which are saved and returned in a container 
+ * object, from which the desired objects can then be fetched
+ * @author Bastian Struggl
  *
  */
 public class ConverterForCurrentAndForecasts {
 	
-   /**
-	* Hauptmethode, die für die Konvertierung der externen Objekte/Klassen zuständig ist
-	* 
-	* @param cW Es wird der Methode ein externes Objekt des Typs CurrentWeather übergebn (im Format der REST-API)
-	* @param gewünschteAusgabe Hier wird ein String übergebe, nach diesem wird das CurrentWeather-Object (welches ALLE Informationen enthält, also
-	* Daten für das momentane Wetter + der nächsten 7 Tage) in ein gewünschtes internes Objekt umgewandelt. 
-	* Warum hat man 6 klassen mit einem gleichen Typ erstellt und nicht eine Klasse für "DailyWeatherReworked". Das würde im momentanen Zustand Konflikte mit 
-	* dem ORM (Object Relational Mappign) von Hibernate geben. Dieses sieht Klassen als Entitäten. Würde es nur 1 Klasse für die 6 Tagesobjekte geben, würde es nur 
-	* noch eine Tabelle erstellen und wir hätten nicht die Daten der nächsten 6 Tage in der Db, sondern nur für einen Tag. Mit mehr Zeit könnte man sicher 
-	* diesne Konflikt lösen
-	* @return gibt ein ConvertHandingover-Objekt zurück (welches alle 8 komplexen hier verwendeten internen Datenformate speichern kann) zurück. Aus diesem kann man 
-	* dann später das gewünschte Objekt herasuholen, so spart man sich unnötig komplexe Methoden
-	*/
+        /**
+	 * Hauptmethode, die für die Konvertierung der externen Objekte/Klassen zuständig ist
+	 * 
+	 * @param cW Es wird der Methode ein externes Objekt des Typs CurrentWeather übergebn (im Format der REST-API)
+	 * @param gewünschteAusgabe Hier wird ein String übergebe, nach diesem wird das CurrentWeather-Object (welches ALLE Informationen enthält, also
+	 * Daten für das momentane Wetter + der nächsten 7 Tage) in ein gewünschtes internes Objekt umgewandelt. 
+	 * Warum hat man 6 klassen mit einem gleichen Typ erstellt und nicht eine Klasse für "DailyWeatherReworked". Das würde im momentanen Zustand Konflikte mit 
+	 * dem ORM (Object Relational Mappign) von Hibernate geben. Dieses sieht Klassen als Entitäten. Würde es nur 1 Klasse für die 6 Tagesobjekte geben, würde es nur 
+	 * noch eine Tabelle erstellen und wir hätten nicht die Daten der nächsten 6 Tage in der Db, sondern nur für einen Tag. Mit mehr Zeit könnte man sicher 
+	 * diesne Konflikt lösen
+	 * @return gibt ein ConvertHandingover-Objekt zurück (welches alle 8 komplexen hier verwendeten internen Datenformate speichern kann) zurück. Aus diesem kann man 
+	 * dann später das gewünschte Objekt herasuholen, so spart man sich unnötig komplexe Methoden
+	 */
 	public static ConverterHandingover convert(CurrentWeather cW, String gewünschteAusgabe) {
 		ConverterHandingover convertHandingover = new ConverterHandingover();
 		
