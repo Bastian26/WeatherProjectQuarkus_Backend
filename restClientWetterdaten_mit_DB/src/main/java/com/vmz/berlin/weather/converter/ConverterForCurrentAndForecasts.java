@@ -32,7 +32,7 @@ import com.vmz.berlin.weather.data.reworked.WeatherObject_NestedInDailyReworked;
 public class ConverterForCurrentAndForecasts {
 	
         /**
-	 * Hauptmethode, die für die Konvertierung der externen Objekte/Klassen zuständig ist
+	 * Main method that is responsible for converting the external objects / classes
 	 * 
 	 * @param cW Es wird der Methode ein externes Objekt des Typs CurrentWeather übergebn (im Format der REST-API)
 	 * @param gewünschteAusgabe Hier wird ein String übergebe, nach diesem wird das CurrentWeather-Object (welches ALLE Informationen enthält, also
